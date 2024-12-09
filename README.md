@@ -349,7 +349,7 @@ This project is licensed under the [MIT License](LICENSE).
 
 **Your Name**  
 [![LinkedIn](https://www.linkedin.com/in/oussama-guelfaa-256b9a232/)   
-[![Email](https://img.shields.io/badge/Email-your.email@example.com-c14438.svg)](mailto:guelfaao@gmail.com)
+[![Email](https://img.shields.io/badge/Email-guelfaao@gmail.com-c14438.svg)](mailto:guelfaao@gmail.com)
 
 Feel free to reach out for collaborations, feedback, or just a friendly hello!
 
