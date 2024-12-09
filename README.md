@@ -348,9 +348,8 @@ This project is licensed under the [MIT License](LICENSE).
 ## Contact
 
 **Your Name**  
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-YourProfile-blue.svg)](https://www.linkedin.com/in/yourprofile)  
-[![Twitter](https://img.shields.io/badge/Twitter-@yourhandle-blue.svg)](https://twitter.com/yourhandle)  
-[![Email](https://img.shields.io/badge/Email-your.email@example.com-c14438.svg)](mailto:your.email@example.com)
+[![LinkedIn](https://www.linkedin.com/in/oussama-guelfaa-256b9a232/)   
+[![Email](https://img.shields.io/badge/Email-your.email@example.com-c14438.svg)](mailto:guelfaao@gmail.com)
 
 Feel free to reach out for collaborations, feedback, or just a friendly hello!
 
