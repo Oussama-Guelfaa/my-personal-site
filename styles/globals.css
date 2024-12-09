@@ -1,0 +1,41 @@
+/* styles/globals.css */
+
+
+/* Import de la police Roboto depuis Google Fonts */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Set the default background and text colors */
+
+body {
+    @apply bg-background-dark text-text-primary font-sans;
+}
+
+
+/* Style links */
+
+a {
+    @apply text-brand transition-colors;
+}
+
+
+/* Style headings */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    @apply text-text-primary;
+}
+
+
+/* Style buttons without hover effects */
+
+button {
+    @apply text-text-secondary bg-brand-dark rounded px-4 py-2 transition-colors;
+}
