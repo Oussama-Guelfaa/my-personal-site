@@ -1,10 +1,13 @@
-import Layout from '../components/Layout'
-import SEO from '../components/SEO'
-import Hero from '../components/Hero'
-import Link from 'next/link'
-import ProjectCard from '../components/ProjectCard'
-import BlogCard from '../components/BlogCard'
-import { getAllPosts } from '../lib/posts'
+// pages/index.tsx
+
+import Layout from '../components/Layout';
+import SEO from '../components/SEO';
+import Hero from '../components/Hero';
+import Link from 'next/link';
+import ProjectCard from '../components/ProjectCard';
+import BlogCard from '../components/BlogCard';
+import { getAllPosts } from '../lib/posts';
+import { formatDate } from '../lib/utils';
 
 interface HomeProps {
   posts: {
@@ -12,7 +15,7 @@ interface HomeProps {
     title: string;
     excerpt: string;
     date: string;
-  }[]
+  }[];
 }
 
 export default function Home({ posts }: HomeProps) {
@@ -21,57 +24,68 @@ export default function Home({ posts }: HomeProps) {
       <SEO title="Home - My Personal Website" />
       <Hero />
       <section className="mt-12">
-        <h2 className="text-2xl font-bold mb-4">Featured Projects</h2>
+        <h2 className="text-2xl font-bold mb-4 text-text.primary">Featured Projects</h2>
         <div className="grid md:grid-cols-3 gap-6">
-          <ProjectCard 
-            title="Project One" 
-            description="A project about something amazing" 
+          <ProjectCard
+            title="Project One"
+            description="A project about something amazing"
             image="/images/project1.jpg"
             link="https://example.com"
           />
-          <ProjectCard 
+          <ProjectCard
             title="Project Two"
             description="Another incredible endeavor"
-            image="/images/project1.jpg"
+            image="/images/project2.jpg"
             link="https://example.com"
           />
-          <ProjectCard 
+          <ProjectCard
             title="Project Three"
             description="A creative project that I loved working on"
-            image="/images/project1.jpg"
+            image="/images/project3.jpg"
             link="https://example.com"
           />
         </div>
         <div className="mt-4">
-          <Link href="/projects" className="text-brand hover:underline">See all projects →</Link>
+          <Link href="/projects" className="text-brand transition-colors">
+            See all projects →
+          </Link>
         </div>
       </section>
 
       <section className="mt-12">
-        <h2 className="text-2xl font-bold mb-4">Latest Blog Posts</h2>
+        <h2 className="text-2xl font-bold mb-4 text-text.primary">Latest Blog Posts</h2>
         <div className="grid md:grid-cols-3 gap-6">
-          {posts.slice(0, 3).map(post => (
-            <BlogCard key={post.slug} slug={post.slug} title={post.title} excerpt={post.excerpt} date={post.date} />
+          {posts.slice(0, 3).map((post) => (
+            <BlogCard
+              key={post.slug}
+              slug={post.slug}
+              title={post.title}
+              excerpt={post.excerpt}
+              date={formatDate(post.date)}
+            />
           ))}
         </div>
         <div className="mt-4">
-          <Link href="/blog" className="text-brand hover:underline">Read all posts →</Link>
+          <Link href="/blog" className="text-brand transition-colors">
+            Read all posts →
+          </Link>
         </div>
       </section>
     </Layout>
-  )
+  );
 }
 
 export async function getStaticProps() {
-  const posts = getAllPosts().map(post => ({
+  const posts = getAllPosts().map((post) => ({
     slug: post.slug,
     title: post.data.title,
     excerpt: post.data.excerpt,
-    date: post.data.date
-  }))
+    date: post.data.date,
+  }));
+
   return {
     props: {
-      posts
-    }
-  }
+      posts,
+    },
+  };
 }
