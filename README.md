@@ -307,6 +307,42 @@ Deploy your website to a hosting platform for public access. [Vercel](https://ve
 
 ---
 
+
+## Generating Reference Documentation
+
+This project uses JSDoc to generate reference documentation from the comments in the code. Follow the steps below to generate the documentation.
+
+### 1. Install Dependencies
+Ensure you have all required dependencies installed:
+```bash
+npm install
+```
+
+### 2. Generate Documentation
+Run the following command to generate the reference documentation:
+```bash
+npx jsdoc -c jsdoc.config.json
+```
+
+### 3. View the Documentation
+1. After running the command, a `docs/` folder will be created in the project root.
+2. Open the `index.html` file located inside the `docs/` folder in your browser:
+   ```bash
+   open docs/index.html
+   ```
+
+### Automate the Process
+To make generating documentation easier, a script is included in `package.json`. Use the following command:
+```bash
+npm run generate-docs
+```
+
+This command will:
+1. Generate documentation based on the comments in the code.
+2. Save the documentation in the `docs/` folder.
+
+---
+
 ## Contributing
 
 While this is a personal project, contributions are welcome if you find any issues or have suggestions for improvements.
@@ -342,6 +378,7 @@ Navigate to the original repository and open a pull request with your changes.
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
+
 
 ---
 
