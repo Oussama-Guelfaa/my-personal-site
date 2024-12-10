@@ -1,9 +1,24 @@
 // lib/utils.ts
 
 /**
+ * Utility functions for common operations in the application.
+ *
+ * This file contains helper functions such as string manipulation, formatting,
+ * API interaction, and performance optimizations.
+ *
+ * @module utils
+ */
+
+
+/**
  * Formats a date string into a more readable format.
  * @param {string} dateString - The date string in YYYY-MM-DD format or any valid date string.
  * @returns {string} The formatted date, e.g., "January 1, 2024".
+ * @example
+ * ```typescript
+ * const formattedDate = formatDate('2024-01-01');
+ * console.log(formattedDate); // Output: "January 1, 2024"
+ * ```
  */
 export function formatDate(dateString: string): string {
     const options: Intl.DateTimeFormatOptions = { year: 'numeric', month: 'long', day: 'numeric' };
@@ -60,6 +75,10 @@ export function formatDate(dateString: string): string {
    * @param {Function} func - The function to debounce.
    * @param {number} wait - The debounce delay in milliseconds.
    * @returns {Function} The debounced function.
+   *  ```typescript
+   * const debouncedSearch = debounce(() => console.log('Searching...'), 300);
+   * window.addEventListener('input', debouncedSearch);
+   * ```
    */
   export function debounce(func: Function, wait: number): (...args: any[]) => void {
     let timeout: NodeJS.Timeout;
