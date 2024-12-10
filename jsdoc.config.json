@@ -1,0 +1,13 @@
+{
+    "source": {
+        "include": ["dist/"],
+        "exclude": ["node_modules/"],
+        "includePattern": ".+\\.js?$",
+        "excludePattern": "(^|\\/|\\\\)_"
+    },
+    "opts": {
+        "destination": "./docs",
+        "recurse": true,
+        "readme": "./README.md"
+    }
+}
