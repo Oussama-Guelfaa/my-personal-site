@@ -1,41 +1,88 @@
 /* styles/globals.css */
 
 
-/* Import de la police Roboto depuis Google Fonts */
+/* Import de la police Lora depuis Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Set the default background and text colors */
-
+/* Couleurs et police par défaut */
 body {
-    @apply bg-background-dark text-text-primary font-sans;
+    @apply bg-black text-white; /* Fond noir, texte blanc */
+    font-family: 'Lora', serif; /* Police Lora */
 }
 
-
-/* Style links */
-
+/* Style des liens */
 a {
-    @apply text-brand transition-colors;
+    @apply text-white transition-colors;
 }
 
+a:hover {
+    @apply text-gray-400; /* Gris clair pour le survol des liens */
+}
 
-/* Style headings */
-
+/* Style des titres (h1 à h6) */
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-    @apply text-text-primary;
+    @apply text-white; /* Les titres sont en blanc */
 }
 
-
-/* Style buttons without hover effects */
-
+/* Style des boutons */
 button {
-    @apply text-text-secondary bg-brand-dark rounded px-4 py-2 transition-colors;
+    @apply text-white bg-gray-800 rounded px-4 py-2 transition-colors;
+}
+
+button:hover {
+    @apply bg-gray-600; /* Fond plus clair pour le survol */
+}
+
+/* Classes supplémentaires pour ajuster des sections si nécessaire */
+.section-dark {
+    @apply bg-gray-900 text-gray-200; /* Sections secondaires avec fond gris foncé */
+}
+
+.section-light {
+    @apply bg-gray-100 text-gray-900; /* Sections claires si besoin de contraste */
+}
+
+/* Custom styles for the profile image */
+.profile-image-container {
+    @apply bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 p-1 rounded-full shadow-lg transition-transform duration-300; /* Gradient border and hover effect */
+}
+
+.profile-image-container:hover {
+    @apply scale-105; /* Slight zoom on hover */
+}
+
+.profile-image-inner {
+    @apply bg-black rounded-full p-6; /* Inner circle */
+}
+
+.profile-image {
+    @apply rounded-full shadow-md; /* Round image with shadow */
+}
+
+/* Optional glow effect for the image */
+.glow-effect {
+    box-shadow: 0 0 15px 5px rgba(72, 187, 255, 0.6),
+                0 0 30px 10px rgba(72, 187, 255, 0.4);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        box-shadow: 0 0 15px 5px rgba(72, 187, 255, 0.6),
+                    0 0 30px 10px rgba(72, 187, 255, 0.4);
+    }
+    50% {
+        box-shadow: 0 0 20px 10px rgba(72, 187, 255, 0.8),
+                    0 0 40px 20px rgba(72, 187, 255, 0.5);
+    }
 }
